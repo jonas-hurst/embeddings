@@ -1,14 +1,13 @@
 # Template Extension Specification
 
-- **Title:** Template
-- **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** template
+- **Title:** Embeddings
+- **Identifier:** <https://jonas-hurst.github.io/embeddings/main/schema.json>
+- **Field Name Prefix:** emb
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Owner**: @your-gh-handles @person2
-
-This document explains the Template Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-This is the place to add a short introduction.
+- **Owner**: @jonas-hurst
+This document explains the Embedding Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+Embeddings are an abstract representation of an input object. Recent advances in self-supervised learning has lead to a wide variety of Foundation Models trained on earth observation imagery, from which general-purpose embeddings can be distilled. These embeddings capture the essence of the input imagery.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
