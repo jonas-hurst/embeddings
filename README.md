@@ -6,6 +6,7 @@
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @jonas-hurst
+
 This document explains the Embedding Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
 Embeddings are an abstract representation of an input object. Recent advances in self-supervised learning has lead to a wide variety of Foundation
 Models trained on earth observation imagery, from which general-purpose embeddings can be distilled.
