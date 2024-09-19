@@ -5,9 +5,9 @@
     "https://stac-extensions.github.io/template/v1.0.0/schema.json"
   ],
   "type": "Collection",
-  "id": "collection",
-  "title": "A title",
-  "description": "A description",
+  "id": "Sentinel-2-Embeddings-Clay",
+  "title": "Sentinel 2 embeddings from Clay",
+  "description": "This collection contains multi-purpose embeddings generated using the Clay foundation model",
   "license": "Apache-2.0",
   "extent": {
     "spatial": {
@@ -29,29 +29,32 @@
       ]
     }
   },
-  "template:new_field": "test",
-  "template:xyz": {
-    "x": 1,
-    "y": 2,
-    "z": 3
-  },
-  "template:another_one": [
-    1,
-    2,
-    3
-  ],
+
+
+  "emb:model_id": "model_id",
+  "emb:model_name": "Clay",
+  "emb:model_version": "1.0",
+  "emb:embedding_dim": "750",
+  "emb:embedding_quantization": "None",
+  "emb:model_family": "Masked Autoencoder (MAE)",
+  "emb:model_description": "Clay is a foundation model of Earth. Foundation models trained on earth observation (EO) data can efficiently distill and synthesize vast amounts of environmental data, allowing them to generalize this knowledge to specific, downstream applications. This makes them versatile and powerful tools for nature and climate applications. (By: Clay foundation)",
+  "emb:model_config": "The embeddigns provided are the output of the Clay model without further finetuning",
+  "emb:from_collection_id": "sentinel-2-l2a",
+  "emb:searchable": false,
+
+
   "assets": {
     "example": {
       "href": "https://example.com/examples/file.xyz",
       "template:new_field": "test"
     }
   },
+
   "item_assets": {
-    "data": {
+    "embeddings": {
       "roles": [
-        "data"
-      ],
-      "template:new_field": "test"
+        "data", "embeddings"
+      ]
     }
   },
   "summaries": {
@@ -68,6 +71,18 @@
     {
       "href": "https://example.com/examples/item.json",
       "rel": "item"
+    },
+    {
+      "href": "https://exmaple.com/collections/sen2",
+      "rel": "generated-from"
+    },
+    {
+      "href": "https://exmaple.com/collections/models/items/clay-model",
+      "rel": "encoder-model"
+    },
+    {
+      "href": "https://exmaple.com/collections/models/items/clay-decoder-model",
+      "rel": "decoder-model"
     }
   ]
 }
