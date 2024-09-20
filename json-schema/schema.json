@@ -25,12 +25,13 @@
               "allOf": [
                 {
                   "$comment": "Require fields here for Item Properties.",
-                  "required": [
-                    "template:new_field"
-                  ]
+                  "required": []
                 },
                 {
                   "$ref": "#/definitions/fields"
+                },
+                {
+                  "$ref": "#/definitions/fields_itemsonly"
                 }
               ]
             },
@@ -70,38 +71,12 @@
             {
               "$comment": "Require fields here for Collections (top-level).",
               "required": [
-                "template:new_field"
               ]
             },
             {
               "$ref": "#/definitions/fields"
             }
           ]
-        },
-        {
-          "$comment": "This validates the fields in Collection Assets, but does not require them.",
-          "required": [
-            "assets"
-          ],
-          "properties": {
-            "assets": {
-              "type": "object",
-              "not": {
-                "additionalProperties": {
-                  "not": {
-                    "allOf": [
-                      {
-                        "$ref": "#/definitions/require_any_field"
-                      },
-                      {
-                        "$ref": "#/definitions/fields"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
         },
         {
           "$comment": "This is the schema for the fields in Item Asset Definitions. It doesn't require any fields.",
@@ -160,38 +135,76 @@
     "require_any_field": {
       "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
       "anyOf": [
-        {"required": ["template:new_field"]},
-        {"required": ["template:xyz"]},
-        {"required": ["template:another_one"]}
+        {"required": []}
       ]
     },
     "fields": {
       "$comment": "Add your new fields here. Don't require them here, do that above in the corresponding schema.",
       "type": "object",
       "properties": {
-        "template:new_field": {
+        "emb:model_id": {
           "type": "string"
         },
-        "template:xyz": {
-          "type": "object",
-          "required": [
-            "x",
-            "y",
-            "z"
-          ],
-          "properties": {
-            "x": {
-              "type": "number"
-            },
-            "y": {
-              "type": "number"
-            },
-            "z": {
-              "type": "number"
-            }
-          }
+        "emb:model_name": {
+          "type": "string"
         },
-        "template:another_one": {
+        "emb:model_version": {
+          "type": "string"
+        },
+        "emb:embedding_size": {
+          "type": "integer"
+        },
+        "emb:embedding_quantization": {
+          "type": "string",
+          "default": "None"
+        },
+        "emb:model_family": {
+          "type": "string"
+        },
+        "emb:model_description": {
+          "type": "string"
+        },
+        "emb:model_config": {
+          "type": "string"
+        },
+        "emb:from_collection_id": {
+          "type": "string"
+        },
+        "emb:searchable": {
+          "type": "boolean",
+          "const": false
+        }
+      },
+      "patternProperties": {
+        "^(?!emb:)": {
+          "$comment": "Above, change `template` to the prefix of this extension"
+        }
+      }
+    },
+    "fields_itemsonly": {
+      "$comment": "Add new fields here, that are only used within ITEM properties",
+      "type": "object",
+      "properties": {
+        "emb:datetime_generated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "emb:from_item_id": {
+          "type": "string"
+        },
+        "emb:chip_start_pixel_x": {
+          "type": "integer"
+        },
+        "emb:chip_start_pixel_y": {
+          "type": "integer"
+        },
+        "emb:chip_end_pixel_x": {
+          "type": "integer"
+        },
+        "emb:chip_end_pixel_y": {
+          "type": "integer"
+        },
+        "emb:embedding": {
           "type": "array",
           "items": {
             "type": "number"
