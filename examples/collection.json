@@ -29,8 +29,6 @@
       ]
     }
   },
-
-
   "emb:model_id": "model_id",
   "emb:model_name": "Clay",
   "emb:model_version": "1.0",
@@ -41,15 +39,12 @@
   "emb:model_config": "The embeddigns provided are the output of the Clay model without further finetuning",
   "emb:from_collection_id": "sentinel-2-l2a",
   "emb:searchable": false,
-
-
   "assets": {
     "example": {
       "href": "https://example.com/examples/file.xyz",
       "template:new_field": "test"
     }
   },
-
   "item_assets": {
     "embeddings": {
       "roles": [
