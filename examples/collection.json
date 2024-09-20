@@ -53,7 +53,8 @@
   "item_assets": {
     "embeddings": {
       "roles": [
-        "data", "embeddings"
+        "data",
+        "embeddings"
       ]
     }
   },

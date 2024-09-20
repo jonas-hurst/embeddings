@@ -1,17 +1,17 @@
 {
-    "stac_version": "1.0.0",
-    "stac_extensions": [
-      "https://stac-extensions.github.io/template/v1.0.0/schema.json"
-    ],
-    "type": "Feature",
-    "id": "item",
-    "bbox": [
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/template/v1.0.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "item",
+  "bbox": [
       172.9,
       1.3,
       173,
       1.4
-    ],
-    "geometry": {
+  ],
+  "geometry": {
       "type": "Polygon",
       "coordinates": [
         [
@@ -37,48 +37,48 @@
           ]
         ]
       ]
-    },
+  },
 
 
     
-    "properties": {
-      "datetime": "2020-12-11T22:38:32Z",
-      "emb:datetime_generated": "2024-09-12T09:08:33Z"
+  "properties": {
+    "datetime": "2020-12-11T22:38:32Z",
+    "emb:datetime_generated": "2024-09-12T09:08:33Z"
+  },
+
+
+
+  "links": [
+    {
+      "href": "https://example.com/examples/item.json",
+      "rel": "self"
     },
-
-
-
-    "links": [
-      {
-        "href": "https://example.com/examples/item.json",
-        "rel": "self"
-      },
-      {
-        "href": "https://exmaple.com/collections/sen2/items/item1",
-        "rel": "generated-from"
-      },
-      {
-        "href": "https://exmaple.com/collections/sen2/items/item1",
-        "rel": "encoder-model"
-      },
-      {
-        "href": "https://exmaple.com/collections/sen2/items/item1",
-        "rel": "decoder-model"
-      }
-    ],
+    {
+      "href": "https://exmaple.com/collections/sen2/items/item1",
+      "rel": "generated-from"
+    },
+    {
+      "href": "https://exmaple.com/collections/sen2/items/item1",
+      "rel": "encoder-model"
+    },
+    {
+      "href": "https://exmaple.com/collections/sen2/items/item1",
+      "rel": "decoder-model"
+    }
+  ],
   
 
 
 
 
-    "assets": {
-      "embeddings": {
-        "href": "http://example.com/emb.parquet",
-        "title": "embs",
-        "discription": "Embeddings generated from clay",
-        "type": "application/x+parquet",
-        "roles": ["data", "embeddings"]
-      }
+  "assets": {
+    "embeddings": {
+      "href": "http://example.com/emb.parquet",
+      "title": "embs",
+      "discription": "Embeddings generated from clay",
+      "type": "application/x+parquet",
+      "roles": ["data", "embeddings"]
     }
   }
+}
   
