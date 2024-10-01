@@ -192,22 +192,18 @@
         "emb:from_item_id": {
           "type": "string"
         },
-        "emb:chip_start_pixel_x": {
-          "type": "integer"
-        },
-        "emb:chip_start_pixel_y": {
-          "type": "integer"
-        },
-        "emb:chip_end_pixel_x": {
-          "type": "integer"
-        },
-        "emb:chip_end_pixel_y": {
-          "type": "integer"
-        },
         "emb:embedding": {
           "type": "array",
           "items": {
             "type": "number"
+          }
+        },
+        "emb:chip_pixels": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "integer"
           }
         }
       },
@@ -215,8 +211,7 @@
         "^(?!emb:)": {
           "$comment": "Above, change `template` to the prefix of this extension"
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }
