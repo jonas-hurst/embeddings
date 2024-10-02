@@ -110,9 +110,11 @@ For example, `[0, 0, 223, 223]` represents the upper left 224x224 pixels in the 
 The following types should be used as applicable `rel` types in the
 [Link Object](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#link-object).
 
-| Type           | Description                           |
-| -------------- | ------------------------------------- |
-| fancy-rel-type | This link points to a fancy resource. |
+| Type           | Description                                                                            |
+| -------------- | -------------------------------------------------------------------------------------- |
+| generated-from | Link to the collection or item, from which the embeddings were generated               |
+| encoder-model  | Link to the model that was used to generate the embeddings                             |
+| decoder-model  | Link to the model that can be used to reconstruct the origial data from the embeddings |
 
 ## Contributing
 
