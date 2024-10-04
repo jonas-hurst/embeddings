@@ -48,6 +48,10 @@ holds the embedding itmes.
 
 ### Additional Field Information
 
+#### emb:model_config
+
+Description of the model configuration needed to generate the embeddings, e.g. what layers were extracted
+
 #### emb:embedding_quantization
 
 If the embeddings are quantized, indicate the quantization method. If this field is not provided or the value is "None", no quantization is assumed
