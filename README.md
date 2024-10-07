@@ -7,10 +7,11 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @jonas-hurst
 
-This document explains the Embedding Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-Embeddings are an abstract representation of an input object. Recent advances in self-supervised learning has lead to a wide variety of Foundation
-Models trained on earth observation imagery, from which general-purpose embeddings can be distilled.
+This document explains the Embeddings Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+Embeddings are an abstract vector representation of an input object. Recent advances in self-supervised learning has lead to a wide variety of
+Foundation Models trained on earth observation imagery, from which general-purpose embeddings can be distilled.
 These embeddings capture the essence of the input imagery.
+These embeddings can then be used to train application-specific decoder heads (e.g. multi-layer perceptron).
 
 This extension provides fields to STAC Collections and Items to enable discoverability of and cataloging of pre-computed embeddings.
 The embeddings themselves are provided either as a downloadable asset (**recommended**) or as an item property (**discouraged**).
@@ -45,7 +46,7 @@ holds the embedding itmes.
 | emb:model_family           | string  | Family of the model used to generate the embeddings                         |
 | emb:model_description      | string  | Human-redable description of the model used to generate the embeddings      |
 | emb:model_config           | string  | (Human-readable) configuration of the model used to generate the embeddings |
-| emb:embedding_size         | integer | Size of the embedding vector                                              |
+| emb:embedding_size         | integer | Size of the embedding vector                                                |
 | emb:embedding_quantization | string  | Quantization method used for this vector                                    |
 | emb:from_collection_id     | string  | ID of the collection from which the embeddings were generated               |
 | emb:searchable             | boolean | Indicator whether search can be performed within the embedding space        |
