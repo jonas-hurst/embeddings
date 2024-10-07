@@ -1,4 +1,4 @@
-# Template Extension Specification
+# Embeddings Extension Specification
 
 - **Title:** Embeddings
 - **Identifier:** <https://jonas-hurst.github.io/embeddings/main/schema.json>
