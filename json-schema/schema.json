@@ -11,6 +11,9 @@
           "$ref": "#/definitions/stac_extensions"
         },
         {
+          "$ref": "#/definitions/requireEmbeddingsInPropertiesOrAssets"
+        },
+        {
           "type": "object",
           "required": [
             "type",
@@ -212,6 +215,45 @@
           "$comment": "Above, change `template` to the prefix of this extension"
         }
       }
+    },
+    "requireEmbeddingsInPropertiesOrAssets": {
+      "$comment": "This ensures that embedding are provided either through Assets (recommended) or Properties (disocuraged)",
+      "anyOf": [
+        {
+          "$comment": "This ensures a property emb:embedding is present",
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "required": ["emb:embedding"],
+              "properties": {
+                "emb:embedding": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        {
+          "$comment": "This ensures that an asset with role emb:embeddings is there",
+          "type": "object",
+          "properties": {
+            "assets": {
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "roles": {
+                    "type": "array",
+                    "contains": {
+                      "const": "emb:embeddings"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
