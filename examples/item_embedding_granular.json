@@ -79,7 +79,7 @@
   "assets": {
     "emb:embeddings": {
       "href": "https://example.com/examples/file.xyz",
-      "role": [
+      "roles": [
         "data",
         "emb:embeddings"
       ]
