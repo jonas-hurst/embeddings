@@ -12,7 +12,9 @@ Embeddings are an abstract representation of an input object. Recent advances in
 Models trained on earth observation imagery, from which general-purpose embeddings can be distilled.
 These embeddings capture the essence of the input imagery.
 
-**TODO** MUST contain embeddings as assets, or as property, or both
+This extension provides fields to STAC Collections and Items to enable discoverability of and cataloging of pre-computed embeddings.
+The embeddings themselves are provided either as a downloadable asset (**recommended**) or as an item property (**discouraged**).
+Providing embedding data for an item (as an Asset or as a property) is **requried**.
 
 - Examples:
   - [Item example](examples/item_embedding_granular.json): Shows the usage of this extension when each item represents one embedding
@@ -115,7 +117,7 @@ For example, `[0, 0, 223, 223]` represents the upper left 224x224 pixels in the 
 
 | (recommended) Field Name | Type         | role          | Description                                                           |
 | ------------------------ | ------------ | ------------- | --------------------------------------------------------------------- |
-| emb:embeddings           | Asset Object | emb:embedding | **RECOMMENDED** Asset containing the embeddings described by the Item |
+| emb:embeddings           | Asset Object | emb:embeddings | **RECOMMENDED** Asset containing the embeddings described by the Item |
 
 For easy discoverability, it is recommended that the key to the Asset object, that holds the embeddings corresponding to this item, is named `emb:embeddings`.
 The `role` for this asset holding the embedding data **must** be `emb:embedding`, additionally the role `data` may be used.
