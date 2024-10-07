@@ -77,9 +77,12 @@
     }
   ],
   "assets": {
-    "data": {
+    "emb:embeddings": {
       "href": "https://example.com/examples/file.xyz",
-      "template:new_field": "test"
+      "role": [
+        "data",
+        "emb:embeddings"
+      ]
     }
   }
 }

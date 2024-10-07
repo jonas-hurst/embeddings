@@ -62,14 +62,14 @@
     }
   ],
   "assets": {
-    "embeddings": {
+    "emb:embeddings": {
       "href": "http://example.com/emb.parquet",
       "title": "embs",
-      "discription": "Embeddings generated from clay",
+      "discription": "Embeddings generated from Clay foundation model",
       "type": "application/x+parquet",
       "roles": [
         "data",
-        "embeddings"
+        "emb:embeddings"
       ]
     }
   }
