@@ -12,6 +12,8 @@ Embeddings are an abstract representation of an input object. Recent advances in
 Models trained on earth observation imagery, from which general-purpose embeddings can be distilled.
 These embeddings capture the essence of the input imagery.
 
+**TODO** MUST contain embeddings as assets, or as property, or both
+
 - Examples:
   - [Item example](examples/item_embedding_granular.json): Shows the usage of this extension when each item represents one embedding
   - [Item 2 example](examples/item_embedding_multiple.json): Shows the usage of this extension when each item can represent multiple embeddings
@@ -108,6 +110,15 @@ by the Item. This fiel`can only be used if one STAC item represents one embeddin
 
 This array of integers must be of length 4, the items within the array carry the following meaning: `[x_min, y_min, x_max, y_max]`.
 For example, `[0, 0, 223, 223]` represents the upper left 224x224 pixels in the input image
+
+## Asset objects
+
+| (recommended) Field Name | Type         | role          | Description                                                           |
+| ------------------------ | ------------ | ------------- | --------------------------------------------------------------------- |
+| emb:embeddings           | Asset Object | emb:embedding | **RECOMMENDED** Asset containing the embeddings described by the Item |
+
+For easy discoverability, it is recommended that the key to the Asset object, that holds the embeddings corresponding to this item, is named `emb:embeddings`.
+The `role` for this asset holding the embedding data **must** be `emb:embedding`, additionally the role `data` may be used.
 
 ## Relation types
 
