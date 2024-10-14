@@ -31,7 +31,9 @@
   "emb:model_id": "model_id",
   "emb:model_name": "Clay",
   "emb:model_version": "1.0",
-  "emb:embedding_size": 750,
+  "emb:embedding_size": [
+    750
+  ],
   "emb:embedding_quantization": "None",
   "emb:model_family": "Masked Autoencoder (MAE)",
   "emb:model_description": "Clay is a foundation model of Earth. Foundation models trained on earth observation (EO) data can efficiently distill and synthesize vast amounts of environmental data, allowing them to generalize this knowledge to specific, downstream applications. This makes them versatile and powerful tools for nature and climate applications. (By: Clay foundation)",

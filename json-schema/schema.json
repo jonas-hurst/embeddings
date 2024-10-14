@@ -155,7 +155,11 @@
           "type": "string"
         },
         "emb:embedding_size": {
-          "type": "integer"
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minItems": 1
+          }
         },
         "emb:embedding_quantization": {
           "type": "string",

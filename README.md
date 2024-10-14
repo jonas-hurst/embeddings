@@ -57,6 +57,10 @@ holds the embedding itmes.
 
 Description of the model configuration needed to generate the embeddings, e.g. what layers were extracted
 
+#### emb:embedding_size
+
+The size of the embedding. A embedding vector with 750 entries would have this field set `emb:embedding_size: [750]`. In case of multi-dimensional embeddings, the n-th entry in the array represents the length of the embedding in the n-th dimension.
+
 #### emb:embedding_quantization
 
 If the embeddings are quantized, indicate the quantization method. If this field is not provided or the value is "None", no quantization is assumed
